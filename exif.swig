@@ -10,7 +10,7 @@ function getExif(target) {
       }
       if (data) result.push(value.replace('{value}', data));
     }
-    if (result) {
+    if (result.length > 0) {
       const box = document.createElement('div');
       target.wrap(box);
       box.classList.add('exif-container');
