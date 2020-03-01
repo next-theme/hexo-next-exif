@@ -3,7 +3,7 @@
 ![Theme Version](https://img.shields.io/badge/NexT-v7.3.0+-blue?style=flat-square)
 ![Package Version](https://img.shields.io/github/package-json/v/theme-next/hexo-next-exif?style=flat-square)
 
-Exif.js for NexT.
+[Exif.js](https://github.com/exif-js/exif-js) for NexT.
 
 ## Preview
 
