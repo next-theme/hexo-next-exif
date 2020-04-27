@@ -15,7 +15,7 @@ hexo.extend.filter.register('theme_inject', injects => {
     return;
   }
   injects.head.raw('exif', '<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>');
-  injects.bodyEnd.raw('exif', utils.getFileContent('exif.swig'));
+  injects.bodyEnd.raw('exif', utils.getFileContent('exif.njk'));
 
   injects.style.push(utils.getFilePath('exif.styl'));
 

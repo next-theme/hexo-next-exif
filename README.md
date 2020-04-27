@@ -1,7 +1,7 @@
 # Hexo NexT EXIF
 
 ![Theme Version](https://img.shields.io/badge/NexT-v7.3.0+-blue?style=flat-square)
-![Package Version](https://img.shields.io/github/package-json/v/theme-next/hexo-next-exif?style=flat-square)
+![Package Version](https://img.shields.io/github/package-json/v/next-theme/hexo-next-exif?style=flat-square)
 
 [Exif.js](https://github.com/exif-js/exif-js) for NexT.
 
@@ -14,7 +14,7 @@ From: https://unsplash.com/photos/2nNbx_fr4qU
 ## Install
 
 ```bash
-npm install theme-next/hexo-next-exif
+npm install next-theme/hexo-next-exif
 ```
 
 ## Configure
