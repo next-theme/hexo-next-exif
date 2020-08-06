@@ -19,8 +19,8 @@ npm install next-theme/hexo-next-exif
 
 ## Configure
 
-You can config those in both **hexo** or **theme** `_config.yml`
-```yaml
+You can configure this plugin in **Hexo** `_config.yml`.
+```yml
 # JavaScript library for reading EXIF image metadata.
 # For more information: https://github.com/exif-js/exif-js
 exif:
