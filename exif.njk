@@ -2,7 +2,7 @@
 function getExif(target) {
   const tags = {{ config.exif.tags | json }};
   EXIF.getData(target, function() {
-    let result = [];
+    const result = [];
     for (let [key, value] of Object.entries(tags)) {
       let data = EXIF.getTag(this, key);
       if (key === 'ExposureTime' && data <= 0.25) {
