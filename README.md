@@ -7,7 +7,7 @@
 
 ## Preview
 
-![image](https://user-images.githubusercontent.com/16272760/70216651-f1e53200-177a-11ea-8417-0b23544a44c4.png)
+![Preview](https://user-images.githubusercontent.com/16272760/70216651-f1e53200-177a-11ea-8417-0b23544a44c4.png)
 
 From: https://unsplash.com/photos/2nNbx_fr4qU
 

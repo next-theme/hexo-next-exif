@@ -1,6 +1,6 @@
 <script>
 function getExif(target) {
-  const tags = {{ config.exif.tags | json }};
+  const tags = {{ config.exif.tags | safedump }};
   EXIF.getData(target, function() {
     const result = [];
     for (let [key, value] of Object.entries(tags)) {
