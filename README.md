@@ -24,9 +24,6 @@ You can configure this plugin in **Hexo** `_config.yml`.
 # JavaScript library for reading EXIF image metadata.
 # For more information: https://github.com/exif-js/exif-js
 exif:
-  enable: false
-  tags:
-    FocalLength: "{value}mm"
-    FNumber: "f/{value}"
-    ExposureTime: "{value}s"
+  enable: true
+  template: "{FocalLength}mm f/{FNumber} {ExposureTime}s"
 ```
