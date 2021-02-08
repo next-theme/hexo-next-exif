@@ -2,7 +2,4 @@
 # For more information: https://github.com/exif-js/exif-js
 exif:
   enable: false
-  tags:
-    FocalLength: "{value}mm"
-    FNumber: "f/{value}"
-    ExposureTime: "{value}s"
+  template: "{FocalLength}mm f/{FNumber} {ExposureTime}s"

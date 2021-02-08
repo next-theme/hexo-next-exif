@@ -1,20 +1,20 @@
 <script>
 function getExif(target) {
-  const tags = {{ config.exif.tags | safedump }};
+  const template = {{ config.exif.template | safedump }};
   EXIF.getData(target, function() {
-    const result = [];
+    const tags = EXIF.getAllTags(this);
+    let result = template;
     for (let [key, value] of Object.entries(tags)) {
-      let data = EXIF.getTag(this, key);
-      if (key === 'ExposureTime' && data <= 0.25) {
-        data = '1/' + parseInt(1 / data);
+      if (key === 'ExposureTime' && value <= 0.25) {
+        value = '1/' + parseInt(1 / value);
       }
-      if (data) result.push(value.replace('{value}', data));
+      result = result.replace(`{${key}}`, value);
     }
-    if (result.length > 0) {
+    if (result !== template) {
       const box = document.createElement('div');
       target.wrap(box);
       box.classList.add('exif-container');
-      box.insertAdjacentHTML('beforeend', `<div class="exif-metabar"><span>${result.join(' ')}</span></div>`);
+      box.insertAdjacentHTML('beforeend', `<div class="exif-metabar"><span>${result}</span></div>`);
     }
   });
 }
