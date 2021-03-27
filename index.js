@@ -10,10 +10,6 @@ hexo.extend.filter.register('theme_inject', injects => {
   const config = utils.defaultConfigFile('exif', 'default.yaml');
   if (!config.enable) return;
 
-  if (!config.tags) {
-    hexo.log.warn(`exif.tags can't be null.`);
-    return;
-  }
   injects.head.raw('exif', '<script src="https://cdn.jsdelivr.net/npm/exif-js@2/exif.min.js"></script>');
   injects.bodyEnd.raw('exif', utils.getFileContent('exif.njk'));
 
