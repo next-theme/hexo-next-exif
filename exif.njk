@@ -1,4 +1,4 @@
-<script>
+<script{{ pjax }}>
 function getExif(target) {
   const template = {{ config.exif.template | safedump }};
   EXIF.getData(target, function() {
