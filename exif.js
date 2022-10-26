@@ -34,4 +34,4 @@
   document.addEventListener('pjax:success', () => {
     getAllExif();
   });
-});
+})();
