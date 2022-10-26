@@ -10,9 +10,15 @@ hexo.extend.filter.register('theme_inject', injects => {
   const config = utils.defaultConfigFile('exif', 'default.yaml');
   if (!config.enable) return;
 
-  injects.head.raw('exif', '<script src="https://fastly.jsdelivr.net/npm/exif-js@2/exif.min.js"></script>');
-  injects.bodyEnd.raw('exif', utils.getFileContent('exif.njk'));
+  injects.bodyEnd.raw('exif', `{{ next_data('exif', config.exif.template) }}
+<script src="https://fastly.jsdelivr.net/npm/exif-js@2/exif.min.js"></script>
+<script src="{{ url_for("lib/exif.js") }}"></script>`);
 
   injects.style.push(utils.getFilePath('exif.styl'));
 
 });
+
+hexo.extend.generator.register('exif', () => ({
+  path: 'lib/exif.js',
+  data: utils.getFileContent('exif.js')
+}));
