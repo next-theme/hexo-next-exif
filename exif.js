@@ -1,22 +1,25 @@
 (function() {
-  function getExif(target) {
+  async function getExif(element) {
     const template = CONFIG.exif;
-    EXIF.getData(target, function() {
-      const tags = EXIF.getAllTags(this);
-      let result = template;
-      for (let [key, value] of Object.entries(tags)) {
-        if (key === 'ExposureTime' && value <= 0.25) {
-          value = '1/' + parseInt(1 / value);
+    const tags = await ExifReader.load(element.src);
+    let result = template;
+    for (let [key, value] of Object.entries(tags)) {
+      if (key === 'ApertureValue') {
+        value.description = Number(value.description).toFixed(1);
+      }
+      if (key === 'FocalLength') {
+        if (tags.FocalLengthIn35mmFilm) {
+          value.description = tags.FocalLengthIn35mmFilm.description;
         }
-        result = result.replace(`{${key}}`, value);
       }
-      if (result !== template) {
-        const box = document.createElement('div');
-        target.wrap(box);
-        box.classList.add('exif-container');
-        box.insertAdjacentHTML('beforeend', `<div class="exif-metabar"><span>${result}</span></div>`);
-      }
-    });
+      result = result.replace(`{${key}}`, value.description);
+    }
+    if (result !== template) {
+      const box = document.createElement('div');
+      element.wrap(box);
+      box.classList.add('exif-container');
+      box.insertAdjacentHTML('beforeend', `<div class="exif-metabar"><span>${result}</span></div>`);
+    }
   }
 
   function getAllExif() {

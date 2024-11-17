@@ -11,7 +11,7 @@ hexo.extend.filter.register('theme_inject', injects => {
   if (!config.enable) return;
 
   injects.bodyEnd.raw('exif', `{{ next_data('exif', config.exif.template) }}
-<script src="https://fastly.jsdelivr.net/npm/exif-js@2/exif.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/exifreader@4/dist/exif-reader.min.js"></script>
 <script src="{{ url_for("lib/exif.js") }}"></script>`);
 
   injects.style.push(utils.getFilePath('exif.styl'));
