@@ -1,6 +1,6 @@
 {
   "name": "hexo-next-exif",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "Exif.js for NexT.",
   "main": "index.js",
   "scripts": {
