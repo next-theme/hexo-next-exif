@@ -10,9 +10,9 @@ hexo.extend.filter.register('theme_inject', injects => {
   const config = utils.defaultConfigFile('exif', 'default.yaml');
   if (!config.enable) return;
 
-  injects.bodyEnd.raw('exif', `{{ next_data('exif', config.exif.template) }}
-<script src="https://cdn.jsdelivr.net/npm/exifreader@4/dist/exif-reader.min.js"></script>
-<script src="{{ url_for("lib/exif.js") }}"></script>`);
+  injects.head.raw('exif', `{{ next_data('exif', config.exif.template) }}
+<script defer src="https://cdn.jsdelivr.net/npm/exifreader@4/dist/exif-reader.min.js"></script>
+<script defer src="{{ url_for("lib/exif.js") }}"></script>`);
 
   injects.style.push(utils.getFilePath('exif.styl'));
 
