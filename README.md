@@ -25,5 +25,5 @@ You can configure this plugin in **Hexo** `_config.yml`.
 # For more information: https://github.com/exif-js/exif-js
 exif:
   enable: true
-  template: "{FocalLength}mm f/{FNumber} {ExposureTime}s"
+  template: "{FocalLength}mm f/{ApertureValue} {ExposureTime}s"
 ```
