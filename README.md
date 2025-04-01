@@ -3,7 +3,7 @@
 ![Theme Version](https://img.shields.io/badge/NexT-v7.3.0+-blue?style=flat-square)
 ![Package Version](https://img.shields.io/github/package-json/v/next-theme/hexo-next-exif?style=flat-square)
 
-[Exif.js](https://github.com/exif-js/exif-js) for NexT.
+[Exif Reader](https://www.npmjs.com/package/exifreader) for NexT.
 
 ## Preview
 
@@ -22,7 +22,7 @@ npm install next-theme/hexo-next-exif
 You can configure this plugin in **Hexo** `_config.yml`.
 ```yml
 # JavaScript library for reading EXIF image metadata.
-# For more information: https://github.com/exif-js/exif-js
+# For more information: https://www.npmjs.com/package/exifreader
 exif:
   enable: true
   template: "{FocalLength}mm f/{ApertureValue} {ExposureTime}s"
