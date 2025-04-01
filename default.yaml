@@ -1,5 +1,5 @@
 # JavaScript library for reading EXIF image metadata.
-# For more information: https://github.com/exif-js/exif-js
+# For more information: https://www.npmjs.com/package/exifreader
 exif:
   enable: false
   template: "{FocalLength}mm f/{ApertureValue} {ExposureTime}s"
