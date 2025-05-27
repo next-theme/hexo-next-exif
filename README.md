@@ -25,5 +25,5 @@ You can configure this plugin in **Hexo** `_config.yml`.
 # For more information: https://www.npmjs.com/package/exifreader
 exif:
   enable: true
-  template: "{FocalLength}mm f/{ApertureValue} {ExposureTime}s"
+  template: "{FocalLength} f/{ApertureValue} {ExposureTime}s"
 ```
