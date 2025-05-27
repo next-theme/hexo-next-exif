@@ -2,4 +2,4 @@
 # For more information: https://www.npmjs.com/package/exifreader
 exif:
   enable: false
-  template: "{FocalLength}mm f/{ApertureValue} {ExposureTime}s"
+  template: "{FocalLength} f/{ApertureValue} {ExposureTime}s"
